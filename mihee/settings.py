@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+#최상위 URL CONF를 지정하는 것  
 ROOT_URLCONF = 'mihee.urls'
 
 TEMPLATES = [
