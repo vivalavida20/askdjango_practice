@@ -4,7 +4,7 @@ from django.forms import ValidationError
 
 def lnglat_validator(value):
     if not re.match(r'^([+-]?\d+\.?\d*),([+-]?\d+\.?\d*)$', value):
-        raise ValidationError('Invalid LngLat Type')
+        raise ValidationError('Invalid ㅇLngLat Type')
 
 class Post(models.Model):
     title = models.CharField(max_length=100, verbose_name="제목", help_text="포스팅 제목을 입력해주세요 최대 100자") #verbose_name을 설정하면 브라우저별 언어 설정에 대응하기가 어렵다는 단점

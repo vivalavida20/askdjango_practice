@@ -1,5 +1,5 @@
 from django.views.generic import View, TemplateView
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 class PostListView1(View):
     def get(self, request):
@@ -28,7 +28,12 @@ post_list2 = PostListView2.as_view()
 
 # 직접 해볼 것
 class PostListView3(View):
-    pass
+
+    def get_json_response(self):
+        return JsonResponse({
+            'message' : '안녕 파이썬 장고',
+            'items' : ['파이썬', '안녕', '장고']
+        }, json_dumps_params={'ensure_ascii' : False })
 
 class PostListView3(View):
     pass
