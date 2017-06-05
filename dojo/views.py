@@ -34,7 +34,7 @@ def post_list3(request):
     return JsonResponse({
         'message' : '안녕 파이썬 장고',
         'items' : ['파이썬', '안녕', '장고'],
-    }, json_dumps_params={'ensure_ascii' : False})ç
+    }, json_dumps_params={'ensure_ascii' : False})
 
 def excel_download(request):
     filepath = os.path.join(settings.BASE_DIR, 'studymember.xlsx')
