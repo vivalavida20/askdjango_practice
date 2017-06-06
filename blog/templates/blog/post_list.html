@@ -8,6 +8,11 @@
     <h1>안녕하세요</h1>
     <p>장고 테스트입니당</p>
 
+    <form action="" method="get">
+        <input type="text" name="{{ q }}" />
+        <input type="submit" value="검색">
+    </form>
+    
     <ul>
     {% for post in post_list %}
         <li>{{ post.title }}</li>
