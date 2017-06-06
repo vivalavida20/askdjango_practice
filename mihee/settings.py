@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blog',
     'django_extensions',
     'debug_toolbar',
+    'dojo',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DjangoToolbarMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 #최상위 URL CONF를 지정하는 것  
@@ -123,3 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+INTERNEL_IPS = ['127.0.0.1']
