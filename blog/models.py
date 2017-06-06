@@ -23,6 +23,10 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     # auto_now_add - 최초 생성 시 값이 생성 auto_now - 조회할 때마다 값이 갱신
 
+    class Meta:
+        # 기본 정렬 순서를 제공
+        ordering = ['-id'] #id필드 역순
+
     # 쿼리셋으로 불러올 때 보이게 하고 싶은 내용 정의
     def __str__(self):
         return self.title
