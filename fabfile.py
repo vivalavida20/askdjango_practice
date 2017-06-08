@@ -184,3 +184,9 @@ def _grant_sqlite3():
 
 def _restart_apache2():
     sudo('sudo service apache2 restart')
+
+def create_superuser():
+    virtualenv_folder = project_folder + '/../.virtualenvs/{}'.format(PROJECT_NAME)
+    run('cd %s && %s/bin/python3 manage.py createsuperuser' % (
+        project_folder, virtualenv_folder
+    ))
