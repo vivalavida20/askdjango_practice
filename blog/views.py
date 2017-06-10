@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from .models import Post
 
@@ -13,7 +14,15 @@ def post_list(request):
     })
 
 def post_detail(request, id):
-	post = Post.objects.get(id=id)
+	
+	# 아래 get_object_or_404로 예외처리하는 것이 가장 간단하다.
+	# try:
+	# 	post = Post.objects.get(id=id)
+	# except Post.DoesNotExist:
+	# 	raise Http404
+
+	post = get_obect_or_404(Post, id=id)
+
 	return render(request, 'blog/post_detail.html', {
 		'post' : post,
-		})
+	})
