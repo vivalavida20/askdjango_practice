@@ -15,5 +15,5 @@ def post_list(request):
 def post_detail(request, id):
 	post = Post.objects.get(id=id)
 	return render(request, 'blog/post_detail.html', {
-		post : 'post'
+		'post' : post,
 		})
