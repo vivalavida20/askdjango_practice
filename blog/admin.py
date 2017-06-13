@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 from django.utils.safestring import mark_safe
 # Register your models here.
 
@@ -20,3 +20,7 @@ class PostAdmin(admin.ModelAdmin):
 		self.message_user(request, "{}건의 포스팅을 공개했습니다.".format(updated_count))
 	make_published.short_description = "포스팅을 바로 출판합니다."
 #admin.site.register(Post, PostAdmin)
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+	pass
