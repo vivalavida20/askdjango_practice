@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
 
 def post_list(request):
@@ -21,7 +21,7 @@ def post_detail(request, id):
 	# except Post.DoesNotExist:
 	# 	raise Http404
 
-	post = get_obect_or_404(Post, id=id)
+	post = get_object_or_404(Post, id=id)
 
 	return render(request, 'blog/post_detail.html', {
 		'post' : post,

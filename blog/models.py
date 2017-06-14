@@ -21,6 +21,7 @@ class Post(models.Model):
     status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    tag_set = models.ManyToManyField('Tag')
     # auto_now_add - 최초 생성 시 값이 생성 auto_now - 조회할 때마다 값이 갱신
 
     class Meta:
@@ -37,3 +38,6 @@ class Comment(models.Model):
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True) #unique 값을 설정하면 같은 태그를 또 등록하지 않을 수 있도록 설정 가능 
