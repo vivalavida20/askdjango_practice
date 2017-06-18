@@ -41,3 +41,6 @@ class Comment(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True) #unique 값을 설정하면 같은 태그를 또 등록하지 않을 수 있도록 설정 가능 
+
+    def __str__(self):
+        return self.name
