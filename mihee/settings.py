@@ -61,7 +61,9 @@ ROOT_URLCONF = 'mihee.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'mihee', 'templates'), # 템플릿 파일의 기본 루트를 설정해준다. (저 뜻은 베이스디렉토리를 mihee/templates로 두겠다는 뜻인거지 )
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

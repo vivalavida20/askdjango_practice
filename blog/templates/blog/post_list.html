@@ -1,14 +1,8 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <title></title>
-</head>
-<body>
-    <h1>안녕하세요</h1>
-    <p>장고 테스트입니당</p>
+{% extends "blog/layout.html" %}
 
-    <form action="" method="get">
+{% block content %}
+
+<form action="" method="get">
         <input type="text" name="{{ q }}" />
         <input type="submit" value="제목 검색">
     </form>
@@ -19,6 +13,22 @@
         <li>{{ post.content }}</li>
     {% endfor %}
     </ul>
+
+{% endblock %}
+
+<!-- 이 밑에거는 무시된다.  -->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title></title>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    <p>장고 테스트입니당</p>
+
+    
 </body>
 </html>
 

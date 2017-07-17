@@ -1,5 +1,7 @@
 from django.db import models
 import re
+#from django.conf.auth import User
+from django.conf import settings
 from django.forms import ValidationError
 
 def lnglat_validator(value):
@@ -12,7 +14,9 @@ class Post(models.Model):
         ('p', 'Published'),
         ('w', 'Withdrawn'),
     )
-    author = models.CharField(max_length=20)
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    # author = models.CharField(max_length=20)
     title = models.CharField(max_length=100, verbose_name="제목", help_text="포스팅 제목을 입력해주세요 최대 100자") #verbose_name을 설정하면 브라우저별 언어 설정에 대응하기가 어렵다는 단점
     content = models.TextField()
     tags = models.CharField(max_length=100, blank=True)
